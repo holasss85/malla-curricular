@@ -13,11 +13,11 @@
   </header>
 
   <main class="malla">
-    <!-- SEMESTRES -->
+    <!-- SEMESTRES COMPLETOS -->
     <section class="semestre" data-orden="1">
       <h2>Primer Semestre</h2>
       <div class="materia" id="fisica-i" data-req="">Física I y Lab</div>
-      <div class="materia" id="quimica-gral" data-req="">Química Gral y Lab</div>
+      <div class="materia" id="quimica-gral" data-req="">Química Grl y Lab</div>
       <div class="materia" id="intro-programacion" data-req="">Introducción a la Programación</div>
       <div class="materia" id="intro-ingenieria" data-req="">Introducción a la Ingeniería Biomédica</div>
       <div class="materia" id="pensamiento-critico" data-req="">Pensamiento Crítico</div>
@@ -33,7 +33,76 @@
       <div class="materia" id="antropologia-cristiana" data-req="">Antropología Cristiana</div>
     </section>
 
-    <!-- Aquí puedes agregar los demás semestres siguiendo el mismo formato -->
+    <section class="semestre" data-orden="3">
+      <h2>Tercer Semestre</h2>
+      <div class="materia" id="electricidad-electromagnetismo" data-req="fisica-i">Electricidad y Electromagnetismo y Lab</div>
+      <div class="materia" id="calculo-ii" data-req="calculo-i">Cálculo II</div>
+      <div class="materia" id="quimica-org-ii" data-req="quimica-org-i">Química Orgánica II y Lab</div>
+      <div class="materia" id="quimica-fisica" data-req="quimica-gral">Química Física y Lab</div>
+      <div class="materia" id="circuitos-digitales" data-req="programacion-i,circuitos-electronicos-i">Circuitos Digitales</div>
+      <div class="materia" id="circuitos-electronicos-ii" data-req="circuitos-electronicos-i">Circuitos Electrónicos II</div>
+    </section>
+
+    <section class="semestre" data-orden="4">
+      <h2>Cuarto Semestre</h2>
+      <div class="materia" id="ec-diferenciales" data-req="calculo-ii">Ec. Diferenciales Ordinarias</div>
+      <div class="materia" id="prob-estadistica" data-req="calculo-i">Probabilidad y Estadística I</div>
+      <div class="materia" id="biologia-celular" data-req="quimica-org-ii">Biología Celular y Molecular</div>
+      <div class="materia" id="bioquimica" data-req="quimica-fisica">Bioquímica</div>
+      <div class="materia" id="circuitos-electronicos-iii" data-req="circuitos-electronicos-ii">Circuitos Electrónicos III</div>
+      <div class="materia" id="radiaciones-radioproteccion" data-req="electricidad-electromagnetismo">Radiaciones y Radioprotección</div>
+      <div class="materia" id="metodologia-investigacion" data-req="prob-estadistica">Metodología de la Investigación</div>
+    </section>
+
+    <section class="semestre" data-orden="5">
+      <h2>Quinto Semestre</h2>
+      <div class="materia" id="programacion-superior" data-req="programacion-i">Programación Superior</div>
+      <div class="materia" id="fundamentos-control" data-req="ec-diferenciales">Fundamentos de Control</div>
+      <div class="materia" id="anatomia-humana" data-req="biologia-celular,bioquimica">Anatomía Humana</div>
+      <div class="materia" id="redes-comunicacion" data-req="circuitos-digitales">Redes de Comunicación en Bioing.</div>
+      <div class="materia" id="senales-sistemas" data-req="ec-diferenciales,prob-estadistica">Señales y Sistemas</div>
+      <div class="materia" id="cristologia" data-req="antropologia-cristiana">Cristología</div>
+    </section>
+
+    <section class="semestre" data-orden="6">
+      <h2>Sexto Semestre</h2>
+      <div class="materia" id="control-i" data-req="fundamentos-control">Control I</div>
+      <div class="materia" id="imagenologia-medica" data-req="senales-sistemas">Imagenología Médica</div>
+      <div class="materia" id="bioinstrumentacion" data-req="circuitos-electronicos-iii">Bioinstrumentación</div>
+      <div class="materia" id="fisiologia-cuant" data-req="anatomia-humana">Fisiología Cuantitativa</div>
+      <div class="materia" id="prep-eval-proy" data-req="metodologia-investigacion">Prep. y Eval. Proyectos para Ing.</div>
+    </section>
+
+    <section class="semestre" data-orden="7">
+      <h2>Séptimo Semestre</h2>
+      <div class="materia" id="fisiopatologia" data-req="fisiologia-cuant">Fisiopatología</div>
+      <div class="materia" id="ingenieria-clinica" data-req="redes-comunicacion">Ingeniería Clínica</div>
+      <div class="materia" id="biomecanica-biomateriales" data-req="">Biomecánica y Biomateriales</div>
+      <div class="materia" id="libre-i" data-req="">Libre I</div>
+      <div class="materia" id="doctrina-social" data-req="cristologia">Doctrina Social de la Iglesia</div>
+    </section>
+
+    <section class="semestre" data-orden="8">
+      <h2>Octavo Semestre</h2>
+      <div class="materia" id="sistemas-embebidos-i" data-req="programacion-superior,bioinstrumentacion">Sistemas Embebidos I</div>
+      <div class="materia" id="organos-protesis" data-req="bioinstrumentacion,biomecanica-biomateriales">Órganos Artificiales, Prótesis y Exoesqueletos</div>
+      <div class="materia" id="gestion-hospitalaria" data-req="ingenieria-clinica">Gestión Hospitalaria</div>
+      <div class="materia" id="diseno-sistemas" data-req="prep-eval-proy">Diseño de Sistemas Biomédicos</div>
+      <div class="materia" id="bioetica" data-req="cristologia">Bioética</div>
+      <div class="materia" id="seguridad-ssc" data-req="ingenieria-clinica">Seguridad y Salud Ocupacional</div>
+    </section>
+
+    <section class="semestre" data-orden="9">
+      <h2>Noveno Semestre</h2>
+      <div class="materia" id="libre-ii" data-req="">Libre II</div>
+      <div class="materia" id="practicas-preprofesionales" data-req="gestion-hospitalaria,seguridad-ssc">Prácticas Pre-profesionales</div>
+      <div class="materia" id="taller-grado-i" data-req="prep-eval-proy,diseno-sistemas">Taller de Grado I</div>
+    </section>
+
+    <section class="semestre" data-orden="10">
+      <h2>Décimo Semestre</h2>
+      <div class="materia" id="taller-grado-ii" data-req="taller-grado-i,practicas-preprofesionales,libre-ii">Taller de Grado II</div>
+    </section>
   </main>
 
   <footer class="footer">
@@ -44,3 +113,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
