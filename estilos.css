@@ -1,151 +1,170 @@
+/* ========= PALETA ACTUALIZADA (colores más fuertes) ========= */
 :root{
-  --bg: #f6fbff;            /* blanco muy suave */
-  --celeste-1: #dff6fb;     /* celeste pastel claro */
-  --celeste-2: #bfeef9;     /* celeste pastel medio */
-  --celeste-3: #9ee6f3;     /* celeste un poco más fuerte */
-  --accent: #78d6e8;        /* acento para sombras/bordes */
-  --text: #03303a;          /* texto oscuro, legible */
-  --muted: #6c7a80;
+  --bg: #e6f6ff;           /* fondo general */
+  --celeste-1: #b7e9ff;     /* tarjeta normal */
+  --celeste-2: #8dd9ff;     /* tarjeta aprobada */
+  --celeste-3: #55c8ff;     /* acentos */
+  --accent: #2cbdf7;        /* checkbox/acento */
+  --text: #003344;          /* texto fuerte */
+  --muted: #577a88;
 }
 
-*{box-sizing:border-box}
+/* ========= RESET & BASE ========= */
+*{
+  box-sizing:border-box;
+}
+
 html,body{
-  height:100%;
   margin:0;
-  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  padding:0;
+  font-family: "Inter", system-ui, sans-serif;
   background: linear-gradient(180deg, var(--bg), #ffffff);
   color:var(--text);
 }
 
-/* Top bar */
+/* ========= HEADER ========= */
+
 .topbar{
   padding:24px;
   text-align:center;
   background: linear-gradient(90deg, var(--celeste-1), #ffffff);
   border-bottom: 1px solid rgba(3,48,58,0.05);
-  box-shadow: 0 4px 18px rgba(3,48,58,0.03);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.05);
 }
+
 .topbar h1{
   margin:0;
-  font-size:1.4rem;
-  letter-spacing:0.2px;
+  font-size:1.6rem;
+  font-weight:700;
 }
+
 .topbar .sub{
-  margin:6px 0 0;
-  color:var(--muted);
+  margin:8px 0 0;
   font-size:0.95rem;
+  color:var(--muted);
 }
 
-/* Main malla */
+/* ========= MALLA GENERAL ========= */
+
 .malla{
-  max-width:1200px;
-  margin:22px auto;
-  padding:18px;
+  max-width:1100px;
+  margin:28px auto;
+  padding:10px 18px;
 }
 
-/* Semestre header */
+/* ========= SEMESTRES (YA SIN CUADRO) ========= */
+
 .semestre{
-  margin-bottom:18px;
-  padding:12px 8px;
-  border-radius:12px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
-  border: 1px solid rgba(3,48,58,0.03);
+  margin-bottom:34px;
+  padding:0;
+  background:transparent;
+  border:none;
 }
+
 .semestre h2{
-  margin:0 0 10px 10px;
-  font-size:1rem;
+  margin:0 0 12px 4px;
+  font-size:1.25rem;
+  font-weight:700;
   color:var(--text);
 }
 
-/* fila: container horizontal */
+/* ========= FILA VERTICAL (UNA DEBAJO DE OTRA) ========= */
+
 .fila{
   display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  padding:10px;
+  flex-direction: column;  /* <-- vertical */
+  gap:16px;
+  padding:8px 4px;
 }
 
-/* materia card (diseño C) */
+/* ========= TARJETAS DE MATERIA ========= */
+
 .materia{
-  width:220px;
-  min-width:190px;
+  width:100%;
+  max-width:420px;
   position:relative;
 }
+
 .materia label{
   display:block;
   cursor:pointer;
 }
+
 .card{
-  background: linear-gradient(180deg, #ffffff, var(--celeste-1));
-  border-radius:16px;
-  padding:16px;
-  border: 1px solid rgba(3,48,58,0.06);
-  box-shadow: 0 8px 20px rgba(3,48,58,0.06);
-  transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
-  display:flex;
-  align-items:center;
-  gap:10px;
+  background: var(--celeste-1);
+  border-radius:18px;
+  padding:16px 20px;
+  border: 1px solid rgba(0,0,0,0.10);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+  transition: transform 200ms ease, box-shadow 200ms ease, opacity 200ms ease;
 }
+
+.card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.16);
+}
+
 .card .titulo{
   font-weight:600;
-  font-size:0.95rem;
+  font-size:1rem;
   color:var(--text);
 }
 
-/* checkbox styling */
+/* ========= CHECKBOX ========= */
+
 .chk{
   position:absolute;
-  left:8px;
-  top:8px;
-  width:18px;
-  height:18px;
+  left:-32px;
+  top:50%;
+  transform:translateY(-50%);
+  width:20px;
+  height:20px;
   accent-color: var(--accent);
-  z-index:10;
 }
 
-/* estado bloqueado */
+/* ========= ESTADOS ========= */
+
 .materia.locked .card{
   opacity:0.45;
-  transform: translateY(0);
   pointer-events:none;
 }
 
-/* estado aprobada */
 .materia.aprobada .card{
-  background: linear-gradient(180deg, #ffffff, var(--celeste-2));
-  box-shadow: 0 10px 30px rgba(16,140,160,0.08);
-  border: 1px solid rgba(16,140,160,0.12);
+  background: var(--celeste-2);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.18);
+  border: 1px solid rgba(0,0,0,0.18);
   transform: translateY(-4px);
 }
 
-/* texto pequeño */
+/* ========= FOOTER ========= */
+
 .footer{
-  max-width:1200px;
-  margin:18px auto;
+  max-width:1100px;
+  margin:20px auto;
+  padding:0 20px 40px;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:16px;
-  padding:0 18px 28px;
-}
-.footer #resetBtn{
-  background: transparent;
-  border:1px solid rgba(3,48,58,0.08);
-  padding:8px 12px;
-  border-radius:10px;
-  cursor:pointer;
-}
-.footer .nota{
-  color:var(--muted);
-  font-size:0.9rem;
-  margin:0;
 }
 
-/* responsive */
-@media (max-width:900px){
-  .materia{ width:48%; }
+#resetBtn{
+  background:transparent;
+  border:1px solid rgba(0,0,0,0.15);
+  padding:8px 14px;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:600;
 }
-@media (max-width:520px){
-  .materia{ width:100%; }
-  .topbar h1{ font-size:1.2rem; }
+
+.nota{
+  color:var(--muted);
+  font-size:0.92rem;
+}
+
+/* ========= RESPONSIVE ========= */
+
+@media (max-width:700px){
+  .materia{
+    max-width:100%;
+  }
 }
