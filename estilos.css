@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: #e0f7fa; /* celeste pastel de fondo */
+  background: #d0f0fc; /* celeste pastel de fondo */
 }
 
 .topbar {
@@ -59,7 +59,7 @@ body {
 }
 
 .materia.locked {
-  background-color: #b3e5fc; /* celeste muy suave */
+  background-color: #c0e8f9; /* celeste muy suave */
   color: #81d4fa; /* celeste pálido */
   cursor: not-allowed;
   opacity: 0.7;
@@ -67,17 +67,18 @@ body {
 
 .materia:hover:not(.locked) {
   transform: scale(1.05);
+  background-color: #03a9f4; /* celeste brillante al pasar el cursor */
 }
 
 .footer {
   text-align: center;
   padding: 15px;
-  background: #0288d1;
+  background: #0288d1; /* celeste intenso */
   color: #ffffff;
 }
 
 .footer button {
-  background-color: #03a9f4;
+  background-color: #03a9f4; /* celeste brillante */
   border: none;
   color: white;
   padding: 10px 15px;
@@ -88,11 +89,11 @@ body {
 }
 
 .footer button:hover {
-  background-color: #0277bd;
+  background-color: #0277bd; /* celeste oscuro */
 }
 
 .footer .nota {
   margin-top: 8px;
   font-size: 0.85em;
-  color: #b3e5fc;
+  color: #b3e5fc; /* celeste claro */
 }
