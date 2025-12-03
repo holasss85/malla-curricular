@@ -1,0 +1,151 @@
+:root{
+  --bg: #f6fbff;            /* blanco muy suave */
+  --celeste-1: #dff6fb;     /* celeste pastel claro */
+  --celeste-2: #bfeef9;     /* celeste pastel medio */
+  --celeste-3: #9ee6f3;     /* celeste un poco más fuerte */
+  --accent: #78d6e8;        /* acento para sombras/bordes */
+  --text: #03303a;          /* texto oscuro, legible */
+  --muted: #6c7a80;
+}
+
+*{box-sizing:border-box}
+html,body{
+  height:100%;
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, var(--bg), #ffffff);
+  color:var(--text);
+}
+
+/* Top bar */
+.topbar{
+  padding:24px;
+  text-align:center;
+  background: linear-gradient(90deg, var(--celeste-1), #ffffff);
+  border-bottom: 1px solid rgba(3,48,58,0.05);
+  box-shadow: 0 4px 18px rgba(3,48,58,0.03);
+}
+.topbar h1{
+  margin:0;
+  font-size:1.4rem;
+  letter-spacing:0.2px;
+}
+.topbar .sub{
+  margin:6px 0 0;
+  color:var(--muted);
+  font-size:0.95rem;
+}
+
+/* Main malla */
+.malla{
+  max-width:1200px;
+  margin:22px auto;
+  padding:18px;
+}
+
+/* Semestre header */
+.semestre{
+  margin-bottom:18px;
+  padding:12px 8px;
+  border-radius:12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.4));
+  border: 1px solid rgba(3,48,58,0.03);
+}
+.semestre h2{
+  margin:0 0 10px 10px;
+  font-size:1rem;
+  color:var(--text);
+}
+
+/* fila: container horizontal */
+.fila{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  padding:10px;
+}
+
+/* materia card (diseño C) */
+.materia{
+  width:220px;
+  min-width:190px;
+  position:relative;
+}
+.materia label{
+  display:block;
+  cursor:pointer;
+}
+.card{
+  background: linear-gradient(180deg, #ffffff, var(--celeste-1));
+  border-radius:16px;
+  padding:16px;
+  border: 1px solid rgba(3,48,58,0.06);
+  box-shadow: 0 8px 20px rgba(3,48,58,0.06);
+  transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.card .titulo{
+  font-weight:600;
+  font-size:0.95rem;
+  color:var(--text);
+}
+
+/* checkbox styling */
+.chk{
+  position:absolute;
+  left:8px;
+  top:8px;
+  width:18px;
+  height:18px;
+  accent-color: var(--accent);
+  z-index:10;
+}
+
+/* estado bloqueado */
+.materia.locked .card{
+  opacity:0.45;
+  transform: translateY(0);
+  pointer-events:none;
+}
+
+/* estado aprobada */
+.materia.aprobada .card{
+  background: linear-gradient(180deg, #ffffff, var(--celeste-2));
+  box-shadow: 0 10px 30px rgba(16,140,160,0.08);
+  border: 1px solid rgba(16,140,160,0.12);
+  transform: translateY(-4px);
+}
+
+/* texto pequeño */
+.footer{
+  max-width:1200px;
+  margin:18px auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  padding:0 18px 28px;
+}
+.footer #resetBtn{
+  background: transparent;
+  border:1px solid rgba(3,48,58,0.08);
+  padding:8px 12px;
+  border-radius:10px;
+  cursor:pointer;
+}
+.footer .nota{
+  color:var(--muted);
+  font-size:0.9rem;
+  margin:0;
+}
+
+/* responsive */
+@media (max-width:900px){
+  .materia{ width:48%; }
+}
+@media (max-width:520px){
+  .materia{ width:100%; }
+  .topbar h1{ font-size:1.2rem; }
+}
