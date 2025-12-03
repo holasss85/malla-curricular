@@ -1,119 +1,100 @@
-/* ========= PALETA DE COLORES FUERTES ========= */
-:root{
-  --bg: #d7f0ff;           /* fondo general vibrante */
-  --card: #63c8ff;         /* tarjeta normal fuerte */
-  --card-aprobada: #0098e0; /* tarjeta aprobada más fuerte */
-  --card-hover: #40b5ff;   /* hover */
-  --text: #002533;         /* texto oscuro */
-  --muted: #4f6f7f;
+/* ======== General ======== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f0f2f5;
 }
 
-/* ========= BASE ========= */
-*{
-  box-sizing:border-box;
+.topbar {
+  background-color: #1b1b2f;
+  color: #fff;
+  text-align: center;
+  padding: 15px 10px;
 }
 
-body{
-  margin:0;
-  font-family: "Inter", sans-serif;
-  background: linear-gradient(180deg, var(--bg), #ffffff);
-  color:var(--text);
+.topbar .sub {
+  font-size: 0.9em;
+  color: #ccc;
 }
 
-/* ========= HEADER ========= */
-.topbar{
-  padding:22px;
-  text-align:center;
-  background: linear-gradient(90deg, var(--card), #ffffff);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+/* ======== Malla ======== */
+.malla {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px;
+  overflow-x: auto;
 }
 
-.topbar h1{
-  margin:0;
-  font-size:1.7rem;
-  font-weight:800;
-}
-
-.topbar .sub{
-  margin-top:6px;
-  font-size:1rem;
-  color:var(--muted);
-}
-
-/* ========= MALLA ========= */
-.malla{
-  max-width:900px;
-  margin:26px auto;
-  padding:0 20px;
-}
-
-/* ========= SEMESTRE VERTICAL ========= */
-.semestre{
-  margin-bottom:40px;
-}
-
-.semestre h2{
-  margin:0 0 14px 2px;
-  font-size:1.4rem;
-  font-weight:800;
-}
-
-/* Materias verticales */
-.fila{
-  display:flex;
+.semestre {
+  display: flex;
   flex-direction: column;
-  gap:16px;
+  min-width: 220px;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* ========= TARJETAS ========= */
-.card{
-  background: var(--card);
-  padding:18px 20px;
-  border-radius:18px;
-  color:white;
-  font-weight:600;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.20);
-  transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease;
-  cursor:pointer;
+.semestre h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #333;
 }
 
-.card:hover{
-  background: var(--card-hover);
-  transform: translateY(-4px);
-  box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+/* ======== Materias ======== */
+.materia {
+  background-color: #4CAF50; /* color fuerte */
+  color: white;
+  text-align: center;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  user-select: none;
 }
 
-/* Tarjeta aprobada */
-.materia.aprobada .card{
-  background: var(--card-aprobada);
-  transform: translateY(-4px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.32);
+.materia.aprobada {
+  background-color: #2196F3;
 }
 
-/* Para que no haya checkbox */
-.chk{ display:none; }
-
-/* ========= FOOTER ========= */
-.footer{
-  display:flex;
-  justify-content:space-between;
-  padding:40px 20px;
-  max-width:900px;
-  margin:auto;
+.materia.locked {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
-#resetBtn{
-  padding:10px 14px;
-  border-radius:12px;
-  border:2px solid var(--card);
-  background:white;
-  cursor:pointer;
-  font-weight:700;
-  color:var(--text);
+.materia:hover:not(.locked) {
+  transform: scale(1.05);
 }
 
-.nota{
-  color:var(--muted);
-  font-size:0.95rem;
+/* ======== Footer ======== */
+.footer {
+  text-align: center;
+  padding: 15px;
+  background: #1b1b2f;
+  color: #fff;
 }
 
+.footer button {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.2s;
+}
+
+.footer button:hover {
+  background-color: #d32f2f;
+}
+
+.footer .nota {
+  margin-top: 8px;
+  font-size: 0.85em;
+  color: #ccc;
+}
