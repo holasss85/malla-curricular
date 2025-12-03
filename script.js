@@ -1,5 +1,3 @@
-// ========== SISTEMA DE APROBACIÓN SIN CHECKBOX ==========
-
 const STORAGE_KEY = "aprobadas_malla_v2";
 
 function getAprobadas(){
@@ -13,7 +11,6 @@ function setAprobadas(arr){
 function toggleAprobada(id){
   let aprobadas = getAprobadas();
 
-  // Si ya está aprobada, NO permitimos desmarcar
   if(!aprobadas.includes(id)){
     aprobadas.push(id);
     setAprobadas(aprobadas);
@@ -32,13 +29,12 @@ function actualizar(){
       .map(s => s.trim())
       .filter(Boolean);
 
-    // Aprobada
     if(aprobadas.includes(id)){
       m.classList.add("aprobada");
+      m.classList.remove("locked");
       return;
     }
 
-    // Verificar si sus requisitos se cumplieron
     const puede = reqs.every(r => aprobadas.includes(r));
 
     if(puede){
@@ -49,8 +45,17 @@ function actualizar(){
   });
 }
 
+// Hacer click en materia
 document.addEventListener("DOMContentLoaded", () => {
   actualizar();
+
+  document.querySelectorAll(".materia").forEach(m => {
+    m.addEventListener("click", () => {
+      if(!m.classList.contains("locked")){
+        toggleAprobada(m.id);
+      }
+    });
+  });
 
   document.getElementById("resetBtn").onclick = () => {
     if(confirm("¿Seguro que quieres reiniciar todo?")){
@@ -59,4 +64,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 });
-
